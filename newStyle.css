@@ -1,0 +1,27 @@
+body{
+margin: 20px;
+padding: 0;
+background-color: #000000;
+}
+
+.main-img img, 
+.imgs img {
+width: 100%;
+}
+
+.container{
+    margin: auto;
+    max-width: 800px;
+    border: #fff solid 3px;
+    background-color: #fff;
+}
+
+.imgs{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+  
+  

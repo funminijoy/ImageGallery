@@ -1,0 +1,101 @@
+.pic-container {
+  Border: 1px solid black;
+  width: 350px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.grid {
+  margin: 2rem auto;
+}
+
+.grid__container {
+	display: grid;
+	background-color: #000;
+	border: 2px solid #000;
+	grid-gap: 2px;
+	justify-self: center; 
+	max-width: 292px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.grid__item {
+  position: relative;
+}
+
+.grid__item:hover {
+  background-color: #ff4b4c;
+  border: 5px solid black;
+}
+
+.grid__item:hover::after {
+  content: '+';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.grid__item:hover .grid__img::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 75, 76, 0.5);
+}
+
+.grid__item:hover .grid__img::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 1px solid #ff4b4c;
+  left: -11px;
+  right: -11px;
+  bottom: -11px;
+  top: -11px;
+}
+
+.grid__img {
+  position: relative;
+  pointer-events: none;
+  border: 10px solid #fff;
+}
+
+@media only screen and (min-width: 768px) {
+	.grid__container {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		max-width: 583px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	
+	.grid__container {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		max-width: 1165px;
+	}
+}
